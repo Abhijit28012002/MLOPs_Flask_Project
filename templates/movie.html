@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Page</title>
+    <style>
+        #data{
+            margin: 10px;
+            width: 250px;
+            height: 30px;
+        }
+        #datasub{
+            width: 75px;
+            height: 30px;
+            background-color: rgb(130, 130, 225);
+        }
+        #fon{
+            font-family: fantasy;
+            font-size: x-large;
+        }
+        #formdata{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="/moviesubmit" id="formdata" method="post">
+        <Label id="fon">Movie:</Label><br>
+        <input id="data" type="text" required="required" name="moviedata" placeholder="Enter Your Movie Name" ><br>
+        <input id="datasub"  type="submit" name="submit" class="submit" >
+    </form>
+    
+</body>
+</html>
+
+{% endblock %}

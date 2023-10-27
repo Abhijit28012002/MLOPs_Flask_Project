@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <style>
+        body{
+            color: #160884;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+        }
+        h1{
+            color: rgb(5, 65, 8);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Result:</h1>
+    {% if res %}
+        {{ res }} <br>
+    {% endif %}
+</body>
+</html>
+
+{% endblock %}

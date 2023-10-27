@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>house Page</title>
+    <style>
+        .HouseForm { 
+            margin: 0 auto; 
+            width:250px;
+        }
+        #longitude{
+            width: 300px;
+        }
+        #datasub{
+            width: 75px;
+            height: 30px;
+            background-color: rgb(130, 130, 225);
+        }
+    </style>
+</head>
+<body>
+    <form action="/housesubmit" method="post" class="HouseForm">
+        <div>
+            <label for="longitude"> Longitude:</label>
+            <input type="text" required="required"  name="longitude" id="longitude" placeholder="Give Value Between 0 to -150">
+        </div>
+
+        <div>
+            <label> Latitude:</label>
+            <input type="text" name="latitude" required="required" id="longitude" placeholder="Give Value Between 0 to 50">
+        </div>
+
+        <div>
+            <label> Housing Median Age:</label>
+            <input type="text" name="housingMedianAge" required="required" id="longitude" placeholder="Give Value Between 0 to 100">
+        </div>
+
+        <div>
+            <label> Total Rooms:</label>
+            <input type="text" name="totalRooms" required="required" id="longitude" placeholder="Enter your Value">
+        </div>
+
+        <div>
+            <label> Total Bedrooms:</label>
+            <input type="text" name="totalBedrooms" required="required" id="longitude" placeholder="Enter your Value">
+        </div>
+
+        <div>
+            <label> Population:</label>
+            <input type="text" name="population" required="required" id="longitude" placeholder="Enter your Value">
+        </div>
+
+        <div>
+            <label> Households:</label>
+            <input type="text" name="households" required="required" id="longitude" placeholder="Enter your Value">
+        </div>
+
+        <div>
+            <label> Median Income:</label>
+            <input type="text" name="medianIncome" required="required" id="longitude" placeholder="Enter your Value">
+        </div>
+
+        <div>
+            <label> Ocean Proximity:</label>
+            <input type="text" name="oceanProximity" required="required" id="longitude" list="locations" placeholder="Please Select">
+            <datalist id="locations" required="required">
+                <option value="INLAND">INLAND</option>
+                <option value="ISLAND">ISLAND</option>
+                <option value="NEAR BAY">NEAR BAY</option>
+                <option value="NEAR OCEAN">NEAR OCEAN</option>
+                <option value="1H OCEAN">1H OCEAN</option>
+
+            </datalist>
+        </div>
+        <br>
+        <input id="datasub" type="submit" name="submit" class="submit" >
+    </form>
+</body>
+</html>
+
+{% endblock %}
+
+<!--
+
+    <1H OCEAN	INLAND	ISLAND	NEAR BAY	NEAR OCEAN
+longitude: A measure of how far west a house is; a higher value is farther west
+
+latitude: A measure of how far north a house is; a higher value is farther north
+
+housingMedianAge: Median age of a house within a block; a lower number is a newer building
+
+totalRooms: Total number of rooms within a block
+
+totalBedrooms: Total number of bedrooms within a block
+
+population: Total number of people residing within a block
+
+households: Total number of households, a group of people residing within a home unit, for a block
+
+medianIncome: Median income for households within a block of houses (measured in tens of thousands of US Dollars)
+
+
+oceanProximity: Location of the house w.r.t ocean/sea
+-->

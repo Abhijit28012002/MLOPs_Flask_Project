@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            color: blue;
+        }
+        .RowOne{
+            display: flex;
+            justify-content: center;
+
+        }
+        .RowSecond{
+            display: flex;
+            justify-content: center;
+            
+        }
+        .firstRow{
+            margin: 50px;
+        }
+        .row{
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 30px;
+            padding: 20px;
+            width: 300px;
+            height: 90px;
+            color: rgb(6, 6, 6);
+            background-color: rgb(195, 231, 123);
+            font: bold;
+        }
+        .rowa{
+            margin: auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1> You want to Predict </h1>
+    <div class="homemenu">
+        <div class="RowOne">
+            <div class = "firstRow">
+                    <button class='row' ><a href="/house" class="rowa">House Price Prediction</a></button>
+            </div>
+
+            <div class="firstRow">
+                    <button class='row'><a href="/movie" class="rowa">Movie Recommendation   <br>System</a></button>   
+            </div>
+        </div>
+        <div class="RowSecond">
+            <button class='row'><a href="/flight" class="rowa">Flight Fare Prediction    <br> System</a></button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+{% endblock %}
