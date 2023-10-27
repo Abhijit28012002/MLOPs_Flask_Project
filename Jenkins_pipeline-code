@@ -1,0 +1,41 @@
+pipeline{
+    agent any
+    stages{
+        stage("Clone the Code form git"){
+            steps{
+                echo "Cloning the code from GitHub"
+                git url:"https://github.com/Abhijit28012002/MLOPs_Flask_Project.git", branch: "main"
+               
+            }
+        }
+        stage("BuildDockerImage"){
+            steps{
+                echo "Build Docker Image"
+                sh "docker build -t my-flask-app ."
+                
+            }
+        }
+        stage("PushImage in DockerHub"){
+            steps{
+                script{
+                    echo "Push Docker Image In DockerHub"
+                    withCredentials([string(credentialsId: 'DockerhubPassword', variable: 'DockerHubpwd')]) {
+                        sh 'docker tag my-note-app  abhijit28/my-flask-app:latest'
+                        sh 'docker login -u abhijit28 -p ${DockerHubpwd}'
+                        sh 'docker push abhijit28/my-flask-app:latest'
+                    }
+                    
+                }
+            }
+        }
+        stage("Deploy to kubernetes"){
+            steps{
+                script{
+                    echo "Launch Pod in Your Cluster"
+                    kubernetesDeploy (configs: 'deployment.yml',kubeconfigId: 'KubernetesConfig')
+                    
+                }
+            }
+        }
+    }
+}
