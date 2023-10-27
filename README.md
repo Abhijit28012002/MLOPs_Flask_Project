@@ -1,5 +1,18 @@
 # MLOPs_Flask_WebDevelopment_Projects
 
+#### Here I use python 3.11.4 
+#### If You use Python 3.7
+####### requirments is 
+########### click==8.1.7
+########### Flask==2.2.5
+########### jinja2==3.1.2
+########### joblib==1.3.2
+########### numpy==1.21.6
+########### pandas==1.3.5
+########### pytz==2023.3
+########### scikit-learn==1.0.2
+########### werkzeug==2.2.3
+
 # python app.py (Listen:- localhost:5000)
 
 ![image](https://github.com/Abhijit28012002/MLOPs_Flask_Project/assets/91789931/d106feca-4f4b-4330-a5be-6c8ec9b27918)
